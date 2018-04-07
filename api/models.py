@@ -17,6 +17,7 @@ class Profile(models.Model):
     role = models.ForeignKey(Role, on_delete=models.SET_NULL, null=True,
                              blank=True, default=None)
     name = models.CharField(max_length=128, blank=True, default="")
+    email = models.EmailField()
     address = models.CharField(max_length=256, blank=True, default="")
     phone = models.CharField(max_length=15, blank=True, default="")
     cell_phone = models.CharField(max_length=15, blank=True, default="")
