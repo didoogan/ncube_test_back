@@ -31,6 +31,8 @@ if settings.DEBUG:
         url(r'^500/$', default_views.server_error),
         url('api-auth/', include('rest_framework.urls')),
         url('api/', include('api.urls')),
+        url('rest-auth/', include('rest_auth.urls')),
+        url('rest-auth/registration/', include('rest_auth.registration.urls'))
     ]
     if 'debug_toolbar' in settings.INSTALLED_APPS:
         import debug_toolbar
