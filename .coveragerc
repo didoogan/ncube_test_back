@@ -1,0 +1,5 @@
+[run]
+include = ncube_test_back/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
