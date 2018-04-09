@@ -2,7 +2,7 @@ import uuid
 
 from django.core.mail import send_mail
 from rest_framework import status
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -12,7 +12,7 @@ from ncube_test_back.users.models import User
 
 
 class SendInvitationAPIView(APIView):
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request):
         profile_id = request.data.get('profile')
