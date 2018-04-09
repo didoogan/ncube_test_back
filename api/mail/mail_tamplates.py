@@ -9,6 +9,7 @@ invitation_template = '''
             
             Login: {}
             Password: {}
+            
             Once you have signed in please click on the profile tab. Then 
             click the login link here that will display the demographic and 
             Medical Information and confirm that your personal information 
@@ -18,11 +19,6 @@ invitation_template = '''
             doctor and your personal health care team 24-hour-a-day, 
             
             7-days-a-week.
-            
-            Please save the following link onto your computer desktop, 
-            cell phone, or tablet: 
-            
-            ADD LINK HERE
             
             Your adviser will contact you to discuss your personal action 
             plan and health goals which assist you with managing your 

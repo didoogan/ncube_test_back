@@ -1,7 +1,6 @@
 import uuid
 
 from django.core.mail import send_mail
-from django.db import IntegrityError
 from rest_framework import status
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
@@ -28,6 +27,7 @@ class SendInvitationAPIView(APIView):
                                   password[-7:])
         user = User.objects.create(username=username)
         user.set_password(password)
+        user.name = profile.name
         user.save()
         sender = request.user.profile
         message_args = [profile.name, username, password,
@@ -38,5 +38,6 @@ class SendInvitationAPIView(APIView):
                   from_email=sender.email,
                   recipient_list=[profile.email])
         profile.invited = True
+        profile.user = user
         profile.save()
         return Response(data={'message': 'ok'}, status=status.HTTP_200_OK)
