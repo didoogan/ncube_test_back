@@ -25,7 +25,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
         queryset = super(ProfileViewSet, self).get_queryset()
         visible_role = Role.objects.get(name='patient')
         queryset = queryset.filter(role=visible_role)
-        profile = self.request.user.profile
-        if profile.role == visible_role:
-            queryset = queryset.filter(user=profile.user)
+        # profile = self.request.user.profile
+        # if profile.role == visible_role:
+        #     queryset = queryset.filter(user=profile.user)
         return queryset
